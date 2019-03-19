@@ -1,0 +1,27 @@
+{
+  "compatibleVersion": 3,
+  "bundleVersion": 1,
+  "icon": "icon.png",
+  "commands": [
+    {
+      "name": "Slice It",
+      "identifier": "sketch-plugin-easy-slice.slice",
+      "script": "./slice.js"
+    },
+    {
+      "name": "Link Slice",
+      "identifier": "sketch-plugin-easy-slice.arrange-slices.link",
+      "script": "./arrage-slices/link.js"
+    }
+  ],
+  "menu": {
+    "title": "easy-slice",
+    "items": [
+      "sketch-plugin-easy-slice.slice",
+      {
+        "title": "arrange slices",
+        "items": ["sketch-plugin-easy-slice.arrange-slices.link"]
+      }
+    ]
+  }
+}

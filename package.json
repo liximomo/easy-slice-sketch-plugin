@@ -1,0 +1,29 @@
+{
+  "name": "sketch-plugin-easy-slice",
+  "version": "0.1.0",
+  "engines": {
+    "sketch": ">=3.0"
+  },
+  "skpm": {
+    "name": "sketch-plugin-easy-slice",
+    "manifest": "src/manifest.json",
+    "main": "sketch-plugin-easy-slice.sketchplugin",
+    "assets": [
+      "assets/**/*"
+    ]
+  },
+  "scripts": {
+    "build": "skpm-build",
+    "watch": "skpm-build --watch",
+    "start": "skpm-build --watch --run",
+    "postinstall": "npm run build && skpm-link"
+  },
+  "devDependencies": {
+    "@skpm/builder": "^0.5.11"
+  },
+  "author": "liximomo <liximomo@gmail.com>",
+  "repository" : {
+    "type": "git",
+    "url": "git+https://github.com/liximomo/easy-slice-sketch-plugin.git"
+  }
+}
