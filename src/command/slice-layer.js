@@ -1,5 +1,6 @@
-import sketch from 'sketch';
+import sketch, { UI } from 'sketch';
 import { Group, Slice } from 'sketch/dom';
+import { exportFormat } from '../config';
 // documentation: https://developer.sketchapp.com/reference/api/
 
 function sliceFromLayer(layer, exportFormat, partNum = 1) {
@@ -45,18 +46,28 @@ export default function() {
     return;
   }
 
+  let sliceNum = 0;
+  UI.getInputFromUser(
+    'Slice number?',
+    {
+      initialValue: '5',
+      type: UI.INPUT_TYPE.string,
+    },
+    (err, value) => {
+      if (err) {
+        return;
+      }
+
+      sliceNum = parseInt(value, 10);
+    }
+  );
+
+  if (sliceNum <= 0) return;
   const layer = selectedLayers.layers[0];
   const group = new Group({
     name: `${layer.name}-slices`,
   });
-  const slices = sliceFromLayer(
-    layer,
-    {
-      size: '1x',
-      fileFormat: 'jpg',
-    },
-    5
-  );
+  const slices = sliceFromLayer(layer, exportFormat, sliceNum);
   group.layers.push(...slices);
   page.layers.push(group);
 }

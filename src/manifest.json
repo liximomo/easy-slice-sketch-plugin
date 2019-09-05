@@ -5,19 +5,31 @@
   "commands": [
     {
       "name": "Slice It",
-      "identifier": "sketch-plugin-easy-slice.slice",
-      "script": "./slice.js"
+      "identifier": "sketch-plugin-easy-slice.layer.slice",
+      "script": "./command/slice-layer.js"
     },
     {
       "name": "Link Slice",
-      "identifier": "sketch-plugin-easy-slice.arrange-slices.link",
-      "script": "./arrage-slices/link.js"
+      "identifier": "sketch-plugin-easy-slice.slice.link",
+      "script": "./command/link.js"
+    },
+    {
+      "name": "Repeat X",
+      "identifier": "sketch-plugin-easy-slice.slice.repeatX",
+      "script": "./command/repeat-x.js"
+    },
+    {
+      "name": "Repeat Y",
+      "identifier": "sketch-plugin-easy-slice.slice.repeatY",
+      "script": "./command/repeat-y.js"
     }
   ],
   "menu": {
     "title": "easy-slice",
     "items": [
-      "sketch-plugin-easy-slice.slice",
+      "sketch-plugin-easy-slice.layer.slice",
+      "sketch-plugin-easy-slice.slice.repeatX",
+      "sketch-plugin-easy-slice.slice.repeatY",
       {
         "title": "arrange slices",
         "items": ["sketch-plugin-easy-slice.arrange-slices.link"]

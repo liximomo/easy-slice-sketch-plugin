@@ -1,6 +1,4 @@
 import sketch from 'sketch';
-import { Slice } from 'sketch/dom';
-// documentation: https://developer.sketchapp.com/reference/api/
 
 export default function() {
   const doc = sketch.getSelectedDocument();
